@@ -6,9 +6,8 @@
   "author": "jakub@izone.cz",
   "license": "MIT",
   "scripts": {
-    "dev": "./node_modules/.bin/webpack-dev-server --hot",
-    "clean": "rm -rf build/",
-    "test": "testem"
+    "dev": "./node_modules/.bin/webpack-dev-server --config webpack.conf.js",
+    "clean": "rm -rf build/"
   },
   "dependencies": {
     "@cycle/isolate": "^1.4.0",
