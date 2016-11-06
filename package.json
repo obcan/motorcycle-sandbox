@@ -1,0 +1,28 @@
+{
+  "name": "form-demo",
+  "version": "1.0.0",
+  "description": "frp sandbox",
+  "main": "index.js",
+  "author": "jakub@izone.cz",
+  "license": "MIT",
+  "scripts": {
+    "dev": "./node_modules/.bin/webpack-dev-server --hot",
+    "clean": "rm -rf build/",
+    "test": "testem"
+  },
+  "dependencies": {
+    "@cycle/isolate": "^1.4.0",
+    "@motorcycle/core": "^1.3.0",
+    "@motorcycle/dom": "^3.0.0",
+    "immutable": "^3.8.1",
+    "most": "^1.0.5"
+  },
+  "devDependencies": {
+    "babel-core": "^6.18.2",
+    "babel-loader": "^6.2.7",
+    "babel-preset-es2015": "^6.18.0",
+    "html-webpack-plugin": "^2.24.1",
+    "webpack": "2.1.0-beta.25",
+    "webpack-dev-server": "2.1.0-beta.10"
+  }
+}
