@@ -1,7 +1,4 @@
-import {run} from '@motorcycle/core'
-import {makeDOMDriver} from '@motorcycle/dom'
-import main from './counter.js'
+// Loader
+// ======
 
-run(main, {
-  DOM: makeDOMDriver('#app')
-})
+require('./app.js')

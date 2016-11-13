@@ -1,3 +1,12 @@
 {
-  "presets": ["es2015"]
+  "presets": ["es2015"],
+  "plugins": [
+    ["cycle-hmr/most", {
+      "include": "**/src/**",
+      "proxy": {
+        "debug": false
+      }
+    }],
+    "transform-object-rest-spread"
+  ]
 }

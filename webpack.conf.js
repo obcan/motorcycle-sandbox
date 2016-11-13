@@ -2,14 +2,17 @@ const webpack = require('webpack')
 const path = require('path')
 const NamedModulesPlugin = require('webpack/lib/NamedModulesPlugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
   cache: true,
-  devtool: 'cheap-eval-source-map',
+  devtool: 'source-map',
   context: path.join(__dirname, './src'),
-  entry: {
-    js: './index.js'
-  },
+  entry: [
+    'webpack-dev-server/client?http://localhost:3000',
+    'webpack/hot/only-dev-server',
+    './index.js'
+  ],
   output: {
     path: path.join(__dirname, './dist'),
     filename: 'js/[name].bundle.js',
@@ -20,27 +23,51 @@ module.exports = {
   module: {
     loaders: [
       {
-        test: /\.(js|jsx)$/,
+        test: /\.js$/,
         exclude: /node_modules/,
         loaders: [
           // 'react-hot',
           'babel-loader'
         ]
+      },
+      {
+        test: /\.ts$/,
+        exclude: /node_modules/,
+        loaders: [
+          'babel-loader'
+        ]
+      },
+      {
+        test: /\.css$/,
+        loader: ExtractTextPlugin.extract({
+          fallbackLoader: 'style-loader',
+          loader: 'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]'
+        })
+      },
+      {
+        test: /\.scss$/,
+        loader: ExtractTextPlugin.extract({
+          fallbackLoader: 'style-loader',
+          loader: ['css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]', 'sass']
+        })
       }
     ]
   },
   resolve: {
-    extensions: ['.js'],
+    extensions: ['.js', '.ts'],
     modules: [
       path.resolve('./client'),
-      'node_modules'
+      'node_modules',
+      'node_modules/@cycle/most-adapter'
     ]
   },
   plugins: [
+    new ExtractTextPlugin({ filename: 'css/[name]-style.css', disable: false, allChunks: true }),
     new NamedModulesPlugin(),
     new webpack.NoErrorsPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
-      template: 'index.html',
+      template: 'app.html',
       inject: 'body',
       filename: 'index.html'
     })
@@ -50,10 +77,12 @@ module.exports = {
     port: 3000,
     host: 'localhost',
     compress: true,
+    hot: true,
     watchOptions: {
       aggregateTimeout: 300,
       poll: 1000
     },
+    // headers: { 'Access-Control-Allow-Origin': '*' },
     stats: {
       colors: true,
       errors: true,
