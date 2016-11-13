@@ -12,7 +12,6 @@ import main from './components/demo'
 require('./app-style.scss')
 
 // entry point - run application loop
-
 run(main, {
   DOM: makeDOMDriver('#app', {
     modules: [
