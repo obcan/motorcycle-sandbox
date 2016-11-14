@@ -34,6 +34,7 @@
     "@motorcycle/dom": "^3.0.0",
     "browser-jsonp": "^1.1.5",
     "most": "1.0.5",
+    "proxy-loader": "https://github.com/le0nik/proxy-loader",
     "ramda": "^0.22.1"
   },
   "devDependencies": {
@@ -53,7 +54,6 @@
     "mocha": "^3.1.2",
     "most-test": "^1.2.0",
     "node-sass": "^3.11.2",
-    "proxy-loader": "^0.0.10",
     "sass-loader": "^4.0.2",
     "style-loader": "^0.13.1",
     "webpack": "2.1.0-beta.25",

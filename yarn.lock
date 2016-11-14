@@ -2170,6 +2170,11 @@ https-browserify@0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/https-browserify/-/https-browserify-0.0.1.tgz#3f91365cabe60b77ed0ebba24b454e3e09d95a82"
 
+"https://github.com/le0nik/proxy-loader":
+  name proxy-loader
+  version "0.0.10"
+  resolved "https://github.com/le0nik/proxy-loader#0802c07fbce966b25d7dfe38b3a7c1c1248e13ec"
+
 iconv-lite@0.4.13:
   version "0.4.13"
   resolved "https://registry.yarnpkg.com/iconv-lite/-/iconv-lite-0.4.13.tgz#1f88aba4ab0b1508e8312acc39345f36e992e2f2"
@@ -3623,10 +3628,6 @@ proxy-addr@~1.1.2:
   dependencies:
     forwarded "~0.1.0"
     ipaddr.js "1.1.1"
-
-proxy-loader:
-  version "0.0.10"
-  resolved "https://registry.yarnpkg.com/proxy-loader/-/proxy-loader-0.0.10.tgz#66d59e6b92bb3dae2d5f2b612cff570273858bbc"
 
 prr@~0.0.0:
   version "0.0.0"
