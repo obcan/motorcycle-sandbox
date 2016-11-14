@@ -8,10 +8,9 @@ import { coerceToString as cs } from '../../utils/string-utils.js'
 // State -> DOM_Sink
 export default function formView (state$) {
   return state$.map(state => div([
-
     h3(`Form example`),
     section(
-      { props: { className: style.formSection } },
+      { props: { className: cs(style.formSection) } },
       [
         // form fields
         label('Email: ' + cs(state.checkEmailMessage)),
