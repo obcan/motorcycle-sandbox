@@ -1,5 +1,5 @@
 // Counter Component
 // =================
 
-import { default as component } from './counter-component.js'
+import { default as component } from './counter.component.js'
 export default component

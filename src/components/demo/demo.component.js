@@ -31,7 +31,7 @@ export default function demoComponent (sources) {
   }
   const childrenDOM = map(prop('DOM'), children)
 
-  // component abstract MVI-RS declaration
+  // component abstract MVI-RR declaration
   // let
   const actions = intent(sources.DOM, children)
   // in

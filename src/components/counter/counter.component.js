@@ -5,12 +5,13 @@
 import { periodic, merge, sample } from 'most'
 import { div, h3, button } from '@motorcycle/dom'
 import { compose } from 'ramda'
-import style from './counter-style.scss'
+import { coerceToString as cs } from '../../utils/string-utils.js'
+import style from './counter.scss'
 
 // State -> DOM_Sink
 export const view = state$ => state$.map(count => div([
-  button(`.increment ${style.increment}`, 'Increment'),
-  button(`.decrement ${style.decrement}`, 'Decrement'),
+  button(`.increment ${cs(style.increment)}`, 'Increment'),
+  button(`.decrement ${cs(style.decrement)}`, 'Decrement'),
   h3(`Counter: ${count}`)
 ]))
 

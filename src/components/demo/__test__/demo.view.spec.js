@@ -19,10 +19,8 @@ const childrenDOM = {
 
 describe('Demo View', () => {
   it('should show children components', () => {
-    const env = run(view(just({}), childrenDOM))
-    return env.tick().then(result => {
+    run(view(just({}), childrenDOM)).tick().then(result => {
       const VTree = result.events[0]
-      window.w = VTree
       return [
         expect(VTree).to.containSubset({
           children: [

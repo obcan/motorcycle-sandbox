@@ -3624,6 +3624,10 @@ proxy-addr@~1.1.2:
     forwarded "~0.1.0"
     ipaddr.js "1.1.1"
 
+proxy-loader:
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/proxy-loader/-/proxy-loader-0.0.10.tgz#66d59e6b92bb3dae2d5f2b612cff570273858bbc"
+
 prr@~0.0.0:
   version "0.0.0"
   resolved "https://registry.yarnpkg.com/prr/-/prr-0.0.0.tgz#1a84b85908325501411853d0081ee3fa86e2926a"
