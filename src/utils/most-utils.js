@@ -2,7 +2,7 @@
 // ===========================
 
 import most from 'most'
-import { default as R } from 'ramda'
+import { zipObj, keys, values } from 'ramda'
 
 // helper for create form text field changes
 export function createInputStream (DOM, className, startWith = '') {
@@ -24,7 +24,7 @@ export function createClickStream (DOM, className) {
 // it works very similarly to combineArray but accept an object with values are streams
 export const combineObject = most.Stream.prototype.combineObject = function (f, streamsObj) {
   return most.combineArray((current, ...streams) =>
-    f(this, R.zipObj(R.keys(streamsObj), streams)), [this].concat(R.values(streamsObj)))
+    f(this, zipObj(keys(streamsObj), streams)), [this].concat(values(streamsObj)))
 }
 
 export const between = most.Stream.prototype.between = function (first, second) {

@@ -9,7 +9,8 @@
     "dev": "./node_modules/.bin/babel-node ./wds.js",
     "clean": "rm -rf build/",
     "doc": "find ./src -not -path \"./src/**/__test__/*\" -name \"*.js\" | xargs docco {}",
-    "test": "./node_modules/.bin/testem -g"
+    "test": "./node_modules/.bin/testem -g",
+    "dist": "NODE_ENV=production && ./node_modules/.bin/babel-node ./node_modules/.bin/webpack --config ./webpack.prod.conf.js"
   },
   "keywords": [
     "cycle",
@@ -41,6 +42,8 @@
     "babel-cli": "^6.18.0",
     "babel-core": "^6.18.2",
     "babel-loader": "^6.2.7",
+    "babel-plugin-lodash": "^3.2.9",
+    "babel-plugin-ramda": "^1.1.6",
     "babel-plugin-transform-object-rest-spread": "^6.16.0",
     "babel-preset-es2015": "^6.18.0",
     "chai": "^3.5.0",
